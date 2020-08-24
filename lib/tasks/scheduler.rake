@@ -13,7 +13,7 @@ namespace :scheduler do
     uri = URI.parse("https://api.line.me/v2/bot/message/broadcast")
     request = Net::HTTP::Post.new(uri)
     request.content_type = "application/json"
-    request["Authorization"] = "Bearer {#{ENV["LINE_CHANNEL_TOKEN"]}}"
+    request["Authorization"] = "Bearer {5Y6+s1KFWsZhpqv7bLGhyV9GgUPcNU8fQcQffepb4EGDYsi/MuFcJ6jBwNUieqPy959kNnsEgESHusprdYSdH/WtbJ2JekIVWT4PmupUwWAHG/ouY9vJGS76qmvhOZiGllRdiy2C2eJSr7QL0RvaZQdB04t89/1O/w1cDnyilFU=}"
     request.body = JSON.dump({
       "messages" => [
         {
