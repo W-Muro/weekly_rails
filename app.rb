@@ -1,6 +1,6 @@
-# require 'bundler/setup'
-# Bundler.require
-# require 'sinatra/reloader' if development?
+require 'bundler/setup'
+Bundler.require
+require 'sinatra/reloader' if development?
 require 'open-uri'
 require 'nokogiri'
 require "date"
