@@ -3,9 +3,12 @@ GEM
   specs:
     backports (3.18.1)
     line-bot-api (1.16.0)
+    mini_portile2 (2.4.0)
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
@@ -29,6 +32,7 @@ PLATFORMS
 
 DEPENDENCIES
   line-bot-api
+  nokogiri
   sinatra
   sinatra-contrib
 
