@@ -15,6 +15,7 @@ def check_weekly_rails
 
   # 日付の取得
   date = Date.today
+  date -= 1
 
   if result > date
     return "ブログが更新されています。"
@@ -44,10 +45,18 @@ post '/callback' do
     when Line::Bot::Event::Message
       case event.type
       when Line::Bot::Event::MessageType::Text
-        message = {
-          type: 'text',
-          text: event.message['text']
-        }
+        if event.message['text'] == "確認"
+          res = check_weekly_rails
+          message = {
+            type: 'text',
+            text: res
+          }
+        else
+          message = {
+            type: 'text',
+            text: "違うよ"
+          }
+        end
         client.reply_message(event['replyToken'], message)
       when Line::Bot::Event::MessageType::Image, Line::Bot::Event::MessageType::Video
         response = client.get_message_content(event.message['id'])
@@ -61,6 +70,5 @@ post '/callback' do
 end
 
 get '/' do
-  res = check_weekly_rails
-  return res
+  "Bot!!"
 end
